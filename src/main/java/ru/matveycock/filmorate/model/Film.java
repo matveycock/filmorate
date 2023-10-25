@@ -1,6 +1,7 @@
 package ru.matveycock.filmorate.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
@@ -9,6 +10,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import java.time.LocalDate;
+import java.util.Set;
 
 @Data
 @AllArgsConstructor
@@ -29,4 +31,10 @@ public class Film {
     @NotNull
     @Positive(message = "Продолжительность фильма отрицательна")
     private Integer duration;
+
+    private Set<Genre> genres;
+
+    @NotNull
+    @JsonProperty("mpa")
+    private MpaRating mpa;
 }

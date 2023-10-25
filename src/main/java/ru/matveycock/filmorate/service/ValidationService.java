@@ -26,7 +26,7 @@ public class ValidationService {
         }else if(film.getReleaseDate().isBefore(DATE)){
             log.error("RealeaseDate is before 28.12.1895");
             throw new ValidationException("RealeaseDate is before 28.12.1895");
-        }else if(film.getDuration() < 0){
+        }else if(film.getDuration() <    0){
             log.error("Duration is negative");
             throw new ValidationException("Duration is negative");
         }
