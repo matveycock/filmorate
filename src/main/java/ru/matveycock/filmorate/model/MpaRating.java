@@ -20,6 +20,5 @@ public class MpaRating {
     @NotNull
     @NotBlank
     private String name;
-    //Это комментарий
 }
 
